@@ -51,15 +51,11 @@ class Vampire {
     else if (seniorsOfThis.includes(vampire)) return vampire;
     else if (seniorOfvampire.includes(this)) return this;
     else {
-      let vampire;
-      seniorsOfThis.reverse().forEach(item => {
-        seniorOfvampire.reverse().forEach(vamp => {
-          if (item.name === vamp.name) {
-            vampire = vamp;
-          }
-        });
-      });
-      return vampire;
+      for (let item of seniorsOfThis) {
+        for (let vamp of seniorOfvampire) {
+          if (item.name == vamp.name) return vamp;
+        }
+      }
     }
   }
 }
